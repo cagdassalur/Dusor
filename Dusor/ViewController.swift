@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
                             
+    @IBOutlet var tvPw : UITextField
+    @IBOutlet var tvNo : UITextField
+    @IBOutlet var btGiriş : UIButton
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        btGiriş.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func buttonAction(sender: UIButton!)
+    {
+        println(tvNo.text + ":" + tvPw.text)
     }
 
     override func didReceiveMemoryWarning() {
