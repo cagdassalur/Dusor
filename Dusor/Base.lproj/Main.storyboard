@@ -175,7 +175,7 @@
                         <viewControllerLayoutGuide type="bottom" id="koh-nt-ZaF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vq6-6g-zxT">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KGSBilgi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YR-94-bgR">
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJO-DD-OC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="-69"/>
+            <point key="canvasLocation" x="1113" y="-69"/>
         </scene>
         <!--Not Hesaplama-->
         <scene sceneID="Sxw-gL-PPw">
@@ -420,6 +420,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PuT-ou-Wqb"/>
+        <segue reference="ADN-Jk-tgW"/>
+        <segue reference="2wh-W8-1ld"/>
     </inferredMetricsTieBreakers>
 </document>
