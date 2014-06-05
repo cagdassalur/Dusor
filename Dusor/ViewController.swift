@@ -9,12 +9,12 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
-                            
+class ViewController: UIViewController, NSURLConnectionDelegate {
     @IBOutlet var tvPw : UITextField
     @IBOutlet var tvNo : UITextField
     @IBOutlet var btGiriş : UIButton
-    var data: NSMutableData = NSMutableData()
+
+    @lazy var data = NSMutableData()
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         var request: NSURLRequest = NSURLRequest(URL: url)
         var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)
         connection.start()
-        // burda buton disable edilecek
+        // TODO: butonu disable et
     }
     
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
@@ -37,17 +37,15 @@ class ViewController: UIViewController {
     
     func buttonAction(sender: UIButton!){
         println(tvNo.text + ":" + tvPw.text)
-        //startConnection()
+        startConnection()
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!) {
-        println("1111")
-        // Request complete, self.data should now hold the resulting info
-        // Convert the retrieved data in to an object through JSON deserialization
+        println("Connection finished loading.")
         var err: NSError
         //println(data)
         var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-        //println(jsonResult)
+        println(jsonResult)
         /*if jsonResult.count>0 && jsonResult["results"].count>0 {
             var results: NSArray = jsonResult["results"] as NSArray
             self.tableData = results
