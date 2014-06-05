@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     func buttonAction(sender: UIButton!){
         println(tvNo.text + ":" + tvPw.text)
-        startConnection()
+        //startConnection()
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!) {
@@ -45,9 +45,9 @@ class ViewController: UIViewController {
         // Request complete, self.data should now hold the resulting info
         // Convert the retrieved data in to an object through JSON deserialization
         var err: NSError
-        println(data)
+        //println(data)
         var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-        println(jsonResult)
+        //println(jsonResult)
         /*if jsonResult.count>0 && jsonResult["results"].count>0 {
             var results: NSArray = jsonResult["results"] as NSArray
             self.tableData = results
