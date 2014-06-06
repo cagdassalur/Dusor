@@ -16,36 +16,10 @@ class Menu: UIViewController {
     @IBOutlet var btdevam : UIButton
     @IBOutlet var bthesap : UIButton
     @IBOutlet var btayar : UIButton
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnot.addTarget(self, action: "NotBilgisi:", forControlEvents: UIControlEvents.TouchUpInside)
-        btkgs.addTarget(self, action: "KGSBilgi:", forControlEvents: UIControlEvents.TouchUpInside)
-        btdevam.addTarget(self, action: "DevamDurumu:", forControlEvents: UIControlEvents.TouchUpInside)
-        bthesap.addTarget(self, action: "NotHesaplama:", forControlEvents: UIControlEvents.TouchUpInside)
-        btayar.addTarget(self, action: "Ayarlar:", forControlEvents: UIControlEvents.TouchUpInside)
     }
-    
-    func NotBilgisi(sender : UIButton!)
-    {
-        
-    }
-    func KGSBilgi(sender : UIButton!)
-    {
-        
-    }
-    func DevamDurumu(sender : UIButton!)
-    {
-        
-    }
-    func NotHesaplama(sender : UIButton!)
-    {
-        
-    }
-    func Ayarlar(sender : UIButton!)
-    {
-        
-    }
-    
 
     
     override func didReceiveMemoryWarning() {

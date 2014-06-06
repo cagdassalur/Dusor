@@ -12,6 +12,7 @@
 		3ECBEFE4193FC2C000031E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBEFE2193FC2C000031E1E /* Main.storyboard */; };
 		3ECBEFE6193FC2C000031E1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBEFE5193FC2C000031E1E /* Images.xcassets */; };
 		3ECBEFF2193FC2C000031E1E /* DusorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBEFF1193FC2C000031E1E /* DusorTests.swift */; };
+		777E7DDF1941BBBC00A47421 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777E7DDE1941BBBC00A47421 /* DataManager.swift */; };
 		77C1A784193FEB0400DDD84A /* NotBilgisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C1A783193FEB0400DDD84A /* NotBilgisi.swift */; };
 		77C1A786193FED1400DDD84A /* KGSBilgi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C1A785193FED1400DDD84A /* KGSBilgi.swift */; };
 		77C1A788193FEDCE00DDD84A /* NotHesaplama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C1A787193FEDCE00DDD84A /* NotHesaplama.swift */; };
@@ -40,6 +41,7 @@
 		3ECBEFEB193FC2C000031E1E /* DusorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DusorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECBEFF0193FC2C000031E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ECBEFF1193FC2C000031E1E /* DusorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DusorTests.swift; sourceTree = "<group>"; };
+		777E7DDE1941BBBC00A47421 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		77C1A783193FEB0400DDD84A /* NotBilgisi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotBilgisi.swift; sourceTree = "<group>"; };
 		77C1A785193FED1400DDD84A /* KGSBilgi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KGSBilgi.swift; sourceTree = "<group>"; };
 		77C1A787193FEDCE00DDD84A /* NotHesaplama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotHesaplama.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				77C1A787193FEDCE00DDD84A /* NotHesaplama.swift */,
 				77C1A78B193FEDEB00DDD84A /* Ayarlar.swift */,
 				3ECBEFDC193FC2C000031E1E /* Supporting Files */,
+				777E7DDE1941BBBC00A47421 /* DataManager.swift */,
 			);
 			path = Dusor;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				77C1A78C193FEDEB00DDD84A /* Ayarlar.swift in Sources */,
 				77C1A786193FED1400DDD84A /* KGSBilgi.swift in Sources */,
 				77C1A78A193FEDD800DDD84A /* DevamDurumu.swift in Sources */,
+				777E7DDF1941BBBC00A47421 /* DataManager.swift in Sources */,
 				77C1A784193FEB0400DDD84A /* NotBilgisi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
