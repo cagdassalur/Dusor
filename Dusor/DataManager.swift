@@ -11,16 +11,35 @@ import UIKit
 
 var dataMgr: DataManager = DataManager()
 
-struct task{
-    var not: NSDictionary = NSDictionary()
+struct ders{
+    var isim: String = ""
+    var dKod: String = ""
+    var not: String = ""
+    var kredi: String = ""
+    var AKTS: String = ""
+    var hoca: String = ""
+    var basari: String = ""
+    var büt: String =  ""
+    var grup: String = ""
+    var yıl: String = ""
+    var aDönem: String = ""
+    var dönem: String = ""
 }
 
 class DataManager: NSObject {
-    var tasks = task[]()
+    var dersler = ders[]()
     
-    func addTask(notlar: NSDictionary){
-        tasks = task[]()
-        tasks.append(task(not: notlar))
+    func dersEkle(isim:String, dKod:String, not:String, kredi:String,
+        AKTS:String, hoca:String, basari:String, büt:String,
+        grup:String, yıl:String, aDönem:String, dönem:String){
+            
+        dersler.append(ders(isim: isim, dKod: dKod, not: not,
+            kredi: kredi, AKTS: AKTS, hoca: hoca, basari: basari,
+            büt: büt, grup: grup, yıl: yıl, aDönem: aDönem, dönem: dönem))
+    }
+    
+    func reset(){
+        dersler = ders[]()
     }
 }
 

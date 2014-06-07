@@ -21,23 +21,51 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
     
     func buttonAction(sender: UIButton!){
         println(tvNo.text + ":" + tvPw.text)
+        
         let urlPath: String = "http://107.170.167.72:8080/?usr=\(tvNo.text)&pw=\(tvPw.text)&json=true"
         var parsedJSON = parseJSON(getJSON(urlPath))
         var hata = parsedJSON["hata"] as String
+        
         println(hata)
+        
         if hata == "-"
         {
-            dataMgr.addTask(parsedJSON)
-            //let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
-            //let vc : UIViewController = storyboard.instantiateViewControllerWithIdentifier("Menu") as UIViewController;
-            //self.presentViewController(vc, animated: true, completion: nil)
+            dataMgr.reset()
+            saveJSON(parsedJSON)
+            //dataMgr.addTask(parsedJSON)
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+            let vc : UIViewController = storyboard.instantiateViewControllerWithIdentifier("menu") as UIViewController;
+            self.presentViewController(vc, animated: true, completion: nil);
         }
         else
         {
-            //let alert = UIAlertController(title: "Hata", message: "Kulanıcı adı veya şifre hatalı.", preferredStyle: UIAlertControllerStyle.Alert)
-            //alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Default, handler: nil))
-            //self.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Hata", message: "Kulanıcı adı veya şifre hatalı.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
+    }
+    
+    func saveJSON(json: NSDictionary){
+        
+        var dersler:NSArray = json["dersler"] as NSArray
+        for ders_a:AnyObject in dersler
+        {
+            var ders:NSDictionary = ders_a as NSDictionary
+            var tp = String[]()
+            for (i, item_a) in enumerate(ders)
+            {
+                var (n:AnyObject, s:AnyObject) = item_a
+                var line:String = s as String
+                tp.append(line)
+            }
+            dataMgr.dersEkle(tp[4], dKod: tp[2], not: tp[10],
+                kredi: tp[5], AKTS: tp[7], hoca: tp[8], basari: tp[12],
+                büt: tp[0], grup: tp[3], yıl: tp[9], aDönem: tp[11], dönem: tp[1])
+            
+        }
+        
+        
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
