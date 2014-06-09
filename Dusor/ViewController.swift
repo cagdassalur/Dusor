@@ -26,7 +26,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         var rawJSON = getJSON(urlPath)
         
         if (rawJSON == nil){
-            alert("Server'a erişilemiyor", message: "İnternet Bağlantınızı kontrol daha sonra tekrar deneyin.", button: "Tamam")
+            alert("Server'a erişilemiyor", message: "İnternet Bağlantınızı kontrol edip daha sonra tekrar deneyin.", button: "Tamam")
             return
         }
         
