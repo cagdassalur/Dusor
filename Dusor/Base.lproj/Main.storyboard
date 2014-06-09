@@ -22,7 +22,7 @@
                                 <color key="textColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="216216" borderStyle="roundedRect" placeholder="Şifre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tH-Ut-gmN">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tH-Ut-gmN">
                                 <rect key="frame" x="88" y="269" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>

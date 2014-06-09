@@ -23,7 +23,14 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         println(tvNo.text + ":" + tvPw.text)
         
         let urlPath: String = "http://107.170.167.72:8080/?usr=\(tvNo.text)&pw=\(tvPw.text)&json=true"
-        var parsedJSON = parseJSON(getJSON(urlPath))
+        var rawJSON = getJSON(urlPath)
+        
+        if (rawJSON == nil){
+            alert("Server'a erişilemiyor", message: "İnternet Bağlantınızı kontrol daha sonra tekrar deneyin.", button: "Tamam")
+            return
+        }
+        
+        var parsedJSON = parseJSON(rawJSON)
         var hata = parsedJSON["hata"] as String
         
         println(hata)
@@ -32,7 +39,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         {
             dataMgr.reset()
             saveJSON(parsedJSON)
-            //dataMgr.addTask(parsedJSON)
             
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
             let vc : UIViewController = storyboard.instantiateViewControllerWithIdentifier("menu") as UIViewController;
@@ -40,10 +46,20 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         }
         else
         {
-            let alert = UIAlertController(title: "Hata", message: "Kulanıcı adı veya şifre hatalı.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert("Hata", message: "Kullanıcı adı veya şifre hatalı.", button: "Tamam")
+            return
         }
+    }
+    
+    func alert(title: String, message: String, button: String){
+        //let alert = UIAlertController(title: "Hata", message: "Kulanıcı adı veya şifre hatalı.", preferredStyle: UIAlertControllerStyle.Alert)
+        //alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Default, handler: nil))
+        //self.presentViewController(alert, animated: true, completion: nil)
+        var alertView = UIAlertView();
+        alertView.addButtonWithTitle(button);
+        alertView.title = title;
+        alertView.message = message;
+        alertView.show();
     }
     
     func saveJSON(json: NSDictionary){
