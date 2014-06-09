@@ -22,8 +22,9 @@ class NotBilgisi: UIViewController {
             st += "Ders kodu: \(ders.dKod)\n"
             st += "Ders kredisi: \(ders.kredi)\n"
             st += "Ders hocası: \(ders.hoca)\n"
-            st += "Başarı durumu: \(ders.basari)\n"
-            st += "\n--------------\n"
+            st += "Devam durumu: \(ders.oran)\n"
+            st += "Başarı notu: \(ders.basari)\n"
+            st += "--------------\n"
         }
         svNotlar.text = st
 

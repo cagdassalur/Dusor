@@ -64,24 +64,33 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
     
     func saveJSON(json: NSDictionary){
         
-        var dersler:NSArray = json["dersler"] as NSArray
-        for ders_a:AnyObject in dersler
+        var dersler:String[][] = json["dersler"] as String[][]
+        for ders:String[] in dersler
         {
-            var ders:NSDictionary = ders_a as NSDictionary
             var tp = String[]()
-            for (i, item_a) in enumerate(ders)
+
+            for line : String in ders
             {
-                var (n:AnyObject, s:AnyObject) = item_a
-                var line:String = s as String
                 tp.append(line)
             }
-            dataMgr.dersEkle(tp[4], dKod: tp[2], not: tp[10],
-                kredi: tp[5], AKTS: tp[7], hoca: tp[8], basari: tp[12],
-                büt: tp[0], grup: tp[3], yıl: tp[9], aDönem: tp[11], dönem: tp[1])
             
+            println(tp)
+            println(tp.count)
+            if (tp.count < 17)
+            {
+                dataMgr.dersEkle(tp[4], dKod: tp[2], not: tp[8],
+                    kredi: tp[5], AKTS: tp[7], hoca: tp[8], basari: tp[9],
+                    büt: tp[10], grup: tp[11], yıl: tp[1], aDönem: tp[1], dönem: tp[2],
+                    hSaat: "", dSaat: "", tSaat: "", oran: "")
+            }
+            else
+            {
+                dataMgr.dersEkle(tp[4], dKod: tp[2], not: tp[8],
+                    kredi: tp[5], AKTS: tp[7], hoca: tp[8], basari: tp[9],
+                    büt: tp[10], grup: tp[11], yıl: tp[1], aDönem: tp[1], dönem: tp[2],
+                    hSaat: tp[13], dSaat:tp[14], tSaat: tp[15], oran: tp[16])
+            }
         }
-        
-        
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {

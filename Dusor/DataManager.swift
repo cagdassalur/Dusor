@@ -24,6 +24,10 @@ struct ders{
     var yıl: String = ""
     var aDönem: String = ""
     var dönem: String = ""
+    var hSaat: String = ""
+    var dSaat: String = ""
+    var tSaat: String = ""
+    var oran: String = ""
 }
 
 class DataManager: NSObject {
@@ -31,11 +35,13 @@ class DataManager: NSObject {
     
     func dersEkle(isim:String, dKod:String, not:String, kredi:String,
         AKTS:String, hoca:String, basari:String, büt:String,
-        grup:String, yıl:String, aDönem:String, dönem:String){
+        grup:String, yıl:String, aDönem:String, dönem:String,
+        hSaat:String, dSaat:String, tSaat:String, oran:String){
             
         dersler.append(ders(isim: isim, dKod: dKod, not: not,
             kredi: kredi, AKTS: AKTS, hoca: hoca, basari: basari,
-            büt: büt, grup: grup, yıl: yıl, aDönem: aDönem, dönem: dönem))
+            büt: büt, grup: grup, yıl: yıl, aDönem: aDönem, dönem: dönem,
+            hSaat: hSaat, dSaat: dSaat, tSaat: tSaat, oran: oran))
     }
     
     func reset(){
